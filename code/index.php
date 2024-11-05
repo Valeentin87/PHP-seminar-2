@@ -31,18 +31,44 @@ function mathOperation($arg1, $arg2, $operation) {
     }
 }
 ?>
-
-<h2>Результат выполнения скрипта: mathOperation(2, 3, '+') </h2>
-<p> <?php echo mathOperation(2, 3, '+'); ?> </p>
+<h2 style="color:green;"> Демонстрация решения задания № 1 </h2>
+<h2 style="font-style:italic; color:blue;">Результат выполнения скрипта: mathOperation(2, 3, '+') </h2>
+<p style="font-size: 30pt"> <?php echo mathOperation(2, 3, '+'); ?> </p>
 
 <h2>Результат выполнения скрипта: mathOperation(210, 23, '-') </h2>
-<p> <?php echo mathOperation(210, 23, '-'); ?> </p>
+<p style="font-size: 30pt"> <?php echo mathOperation(210, 23, '-'); ?> </p>
 
-<h2>Результат выполнения скрипта: mathOperation(12, 3, '*') </h2>
-<p> <?php echo mathOperation(12, 3, '*'); ?> </p>
+<h2 style="font-style:italic; color:blue;">Результат выполнения скрипта: mathOperation(12, 3, '*') </h2>
+<p style="font-size: 30pt"> <?php echo mathOperation(12, 3, '*'); ?> </p>
 
-<h2>Результат выполнения скрипта: mathOperation(12, 3, '/') </h2>
-<p> <?php echo mathOperation(12, 3, '/'); ?> </p>
+<h2 style="font-style:italic; color:blue;">Результат выполнения скрипта: mathOperation(12, 3, '/') </h2>
+<p style="font-size: 30pt"> <?php echo mathOperation(12, 4, '/'); ?> </p>
 
-<h2>Результат выполнения скрипта: mathOperation(2, 0, '/') </h2>
-<p> <?php echo mathOperation(2, 0, '/'); ?> </p>
+<h2 style="font-style:italic; color:blue;">Результат выполнения скрипта: mathOperation(2, 0, '/') </h2>
+<p style="font-size: 30pt; color:red;"> <?php echo mathOperation(2, 0, '/'); ?> </p>
+
+<h2  style="color:green;">Демонстрация решения задания № 2 </h2>
+<?php
+/*
+3. Объявить массив, в котором в качестве ключей будут использоваться названия областей, а в качестве значений – 
+массивы с названиями городов из соответствующей области. Вывести в цикле значения массива, 
+чтобы результат был таким: Московская область: Москва, Зеленоград, Клин Ленинградская область: Санкт-Петербург, 
+Всеволожск, Павловск, Кронштадт Рязанская область … (названия городов можно найти на maps.yandex.ru).
+*/
+
+
+$cityArr = [
+    'Московская область' => ['Москва', 'Зеленоград', 'Клин'],
+    'Ленинградская область' => ['Санкт-Петербург', 'Всеволожск', 'Павловск', 'Кронштадт'],
+    'Рязанская область' => ['Рязань', 'Сапожок', 'Скопин', 'Ярск']
+];
+
+$allCities = '';
+foreach($cityArr as $key => $elem){
+    $allCities = $key.":";
+    foreach($elem as $city){
+        $allCities .= $city.', ';
+    }
+    echo rtrim($allCities, ', ')."<br>";
+    
+};
